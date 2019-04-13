@@ -1,0 +1,202 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Project Home Page</title>
+
+	<!-- Local Stylesheet for index file-->
+	<link rel="stylesheet" href="css/index.css">
+
+	<!--Stylesheet import for navbar-->
+	<link rel="stylesheet" href="css/navbar.css">
+
+	<!--Stylesheet import for footer-->
+	<link rel="stylesheet" href="css/footer.css">
+
+	<!--Bootstrap framework import-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	 crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+	 crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+	 crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+	 crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+	<div class="hero-image container-fluid">
+		<div class="hero-text">
+			<p>Link to GeoJson tutorial page<p>
+					<p>Link to Javascript techniques tutorial page</p>
+					<a href="#Geo">
+						<button type="button" class="btn btn-lg btn-outline-light">GeoJson</button>
+					</a>
+					<a href="#Java">
+						<button type="button" class="btn btn-lg btn-outline-light">JavaScript techniques</button>
+					</a>
+		</div>
+	</div>
+
+	<div id="text">
+		<section class="content container">
+			<section class="content overview">
+				<h1>Overview</h1>
+				<p class="text-justify">The purpose of the integrated project is for our team to create a web application that 
+					will demonstrate how to access data through the use of API’s and then visualise the data. For those who are 
+					unaware on what an API is, it is essentially the user interface for machines. The easiest way to describe it 
+					would be comparing an API to a phone and the machine to a person where the machine will use an API to gain 
+					information just like how a person can use their phone to gain information.</p>
+				<p class="text-justify">In this web application the team was made aware that altogether there would be six webpages 
+					that would use API’s to gain data then visualise said data. The project spec has made it clear for the team what 
+					two of the webpages would entail however the other four web pages were up to the team's own imagination. The team
+					was also made aware that each webpage would have a tutorial webpage linked to it and the tutorial webpage will 
+					briefly explain the visualisation techniques being used, aspects of the data contents, where to source the data 
+					and the API access.</p>
+				<p class="text-justify"><br>The two webpages that the project spec specifies to create are the following:</p>
+			</section>
+			<section class="content earthquake">
+				<h3>Earthquake</h3>
+				<p class="text-justify">When a user enters the earthquake page, they will see a map on the webpage that will remind 
+					them of google maps and this is due to It being the google maps map. On screen it will also show several buttons 
+					that will populate the map with different data markers to do with earthquakes. The markers that appear on the map 
+					represent an earthquake that has occurred.</p>
+				<p class="text-justify">For all the buttons that will be mentioned each one will have the functionality of showing 
+					clustered markers. This means that any marker that will overlap another or in close proximity to another will join 
+					together and the new marker will have a number on it that relates to the number of markers that are clustered. Users 
+					will be able to click on the clustered marker to zoom in on the map to un-cluster the marker.</p>
+				<p class="text-justify">Another feature that all buttons will have will be that when a single marker is shown the marker will 
+					have a number on it representing the magnitude of the earthquake.</p>
+				<p class="text-justify">The final feature that all buttons will have will be that when a single marker is clicked on an info 
+					window will appear. On this info window there will be a link that will open up a new page that when opened will populate the 
+					page with relevant info about the area of where the earthquake happened.</p>
+				<p class="text-justify">On the screen there are 5 buttons and 4 radio buttons. The 4 radio buttons are titled past hour, past day, 
+					past week and past 30 days. The 5 buttons are titled All earthquakes, 1.0+ Earthquakes, 2.5+ Earthquakes, 4.5+ Earthquakes and 
+					Significant. For the user to populate the map with markers they will first have to choose one of the radio buttons and then click 
+					on one of the five buttons. For example, a user choses Past Day and then clicks on All Earthquakes the map will then be populated 
+					with markers of All Earthquakes that have happened in the past day.</p>
+			</section>
+			<section class="content weather">
+				<h3>Weather</h3>
+				<p class="text-justify">On this page the user will be able to view relevant weather information as well as a relevant whether image by 
+					either entering in the latitude and longitude of the location they wish to view, or the user will enter in the location name.  </p>
+				<p class="text-justify">To do this the user will click on either the latitude and longitude button to unlock the latitude and longitude 
+					input fields or the user will click on the location button to unlock the location input field. When the user clicks on one of the 
+					buttons the opposite input fields will be locked so the user will be only able to enter latitude and longitude or the location and 
+					never be able to do both.</p>
+				<p class="text-justify">Once the user has entered their chosen input field, they will then hit the button submit to view a weather image 
+					relevant to the weather of the location they have entered as well as showing useful information relevant to the weather feed.</p>
+				<p class="text-justify"><br>The four other webpages that the team was tasked on making was to come from our imagination, so the team decided 
+					on creating the following webpages:  </p>
+			</section>
+			<section class="content crime">
+				<h3>Crime Finder</h3>
+				<p class="text-justify">On this page a user will be able to see the various reports of crime in a specified area. The user will be able to
+					see this by entering in the chosen location they wish to view in the the textbox available. The date box is optional as
+					if the user does not enter anything then the data recieved back will be using the current month as the date. The user must ensure that the location entered 
+					is within the United Kingdom they must also be aware that due to the API works there is not much data recorded for Scotland.
+				</p>
+				<p class="text-justify">Once the user has entered information into the requred fields they will now only have to click on the button to view the data
+					in a horizontal bar graph.
+				</p>
+			</section>
+			<section class="content word-synonym">
+				<h3>Word Synonym</h3>
+				<p class="text-justify">On this page the user will be able to view a words different synonyms. When a user first enters the page the user will
+					see a box in the center of the screen in the box is a spider diagram. In the center of the spider diagram is the default word that the team has chosen 
+					and it is brown. Branching off from this word is the different synonyms of the word. 
+				</p>
+				<p class="text-justify">For a user to change the spider diagram they can go about this one of two ways. The first would be to click on one of the words that 
+					have branched off. When they do this teh center word will then change to the word that was just clicked on and the branching words will then change to 
+					the new synonym words.
+				</p>
+				<p class="text-justify">The second way that the spider diagram can be changed would be for the user to click on the center word and a text box will appeazr 
+					with the chosen word already entered into it. The user can then change the word to any word of theire liking and then click enter. Once that is done the 
+					spider diagram will then change to match to the new word that was entered.
+				</p>
+			</section>
+			<section class="content education">
+				<h3>Qualifications</h3>
+				<p class="text-justify">For this page the user will be able to see what occupation they could possibly get through a specified qualification. 
+					This is done by the user first choosing an education in the drop-down menu once done the doughnut chart will be populated.  A doughnut chart 
+					key will then be shown this will allow the user to understand what each colour represents. The doughnut chart will show the percentage of people 
+					in a specified job with the user’s chosen education.</p>
+			</section>
+			<section class="content population">
+				<h3>Population</h3>
+				<p class="text-justify">For this page the user will see be able to see the different countries population size. This is shown through an image of the world 
+					in map form. The map will be coloured differently than what it is usually as we are showing the population size through colour. The colours that are 
+					chosen to do this were chosen as it gives the idea to the user that they are seeing in infrared meaning the warmer a country is the more population they 
+					have.</p>
+			</section>
+			<p class ="Java link" id="Java"><p><br>
+			<section class="content Java Script techniques">
+				<h3>Java Script techniques</h3>
+				<p class="text-justify">When coding this project, we will be using some JavaScript to create the web pages, within JavaScript there are things called JavaScript 
+					techniques. A JavaScript technique is a way of improving the readability of the code and the general performance and resource usage of the code.</p>
+				<p class="text-justify">One JavaScript technique that we used was the use of proper variable names, this is an important technique to make use of as it improves 
+					the readability of the code as using proper variable names makes it easier to follow code, debug the code and it makes it easier to understand what each 
+					variable stores as it will have a name appropriate to its use.</p>
+				<p class="text-justify">Another JavaScript technique that we have made use of for the code is, we used text indentation properly. This technique is important 
+					to the code readability as it helps to show where loops start and being using indentation as the start of a loop and the end will be less indented than the 
+					inside of the loop which means it is easier to follow and understand loops.</p>
+				<p class="text-justify">One other way of using JavaScript techniques to improve the readability of the code is to use comments throughout the development process. 
+					Through the use of comments we can see what each function does, what each variable is used for and what every class is for, this helps improve the readability 
+					of the code as using comments means that is easier to quickly find and maintain any problem areas of code as it is already described for us.</p>
+				<p class="text-justify">Browser developer tool is a technique that the team frequently used as this tool is most commonly used when a developer is debugging their 
+					code. With the help of this debugger tool the developers will be able to find where the main errors are with ease. This tool will be used mostly during the development 
+					phase as the developers will use this during their unit testing.</p>
+					<h5>Link to more in depth information</h5>
+					<a href="https://www.w3schools.com/js/js_best_practices.asp" target="_blank">More info here</a><br>	
+					<a href="https://modernweb.com/45-useful-javascript-tips-tricks-and-best-practices/" target="_blank">and here</a><br><br>
+			</section>
+			<p class="Geo link" id="Geo"></p><br>
+			<section class="content GeoJson">
+				<h3>GeoJson</h3>
+				<p class="text-justify">Within this website, we are required to make use of geographical data in order for some of the webpages to function. The two main 
+					pages that require geographical data for the API’S to run are the Earthquakes page and the Weather page. For these API’S to run and function correctly we 
+					will be using geographical data in the GEOJSON format.</p>
+				<p class="text-justify">GEOJSON is the standard format for displaying geographical types and data, the types that are supported by this format are, Points, 
+					LineString, Polygon, MultiPoint, MultiLineString and MultiPolygon.</p>
+				<p class="text-justify">Points are used to display a singular geometrical point, this is also the simplest form of geometrical data that GEOJSON will display 
+					as the data is only displayed in one point, and this could be used to identify 1 singular area of geographical interest.<br>LineStrings are used to display 
+					two points of geographical data that are connected through a line, this could be used to calculate the distance between 2 geographical areas of interest.<br>
+					Polygons are the more complex GEOJSON data types, this is where we have 4 points that are mapped out to display a polygon shape, and this could be used to 
+					represent a large area of geographical interest such as the area with the most earthquakes in a month.<br>The data types that are multi are simply used to 
+					support more than one data entry.</p>
+				<p class="text-justify">For the Earthquakes page the API will read in the data and then display all the points on a map that the earthquakes have happened over 
+					a period of time, for this to function properly we will use GEOJSON multi points as we will display multiple points of geographical interest.</p>
+				<p class="text-justify">For the weather page we will also be using multipoint as the data type due to the pages API displaying the weather as a single point for 
+					that day.</p>
+					<h5>Link to more in depth information</h5>
+					<a href="https://macwright.org/2015/03/23/geojson-second-bite" target="_blank">More info here</a>	
+			</section>
+			<section class="spec-pdf container">
+				<br><br><h3>Project Specification</h3>
+				<a href="https://drive.google.com/file/d/1JxJx0xlJEf7-7IfvUTUyf-_ijmsVLbjm/view?usp=sharing" target ="_blank">
+					<button type="button" class="btn btn-sm btn-outline-dark font-italic">Link to PDF file</button>
+				</a>
+			</section>
+		</section>
+	</div>
+
+
+
+	<div id="navbar">
+		<!--Import Navbar file onto page-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/navbar.js"></script>
+	</div>
+
+
+	<div id="footer">
+		<!--Import Footer file onto page-->
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="js/footer.js"></script>
+	</div>
+</body>
+
+</html>

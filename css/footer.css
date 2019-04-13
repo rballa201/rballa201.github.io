@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou');
+
+.page-footer {
+    font-family: 'ZCOOL QingKe HuangYou', cursive;
+    background-color: rgba(0,0,0,0.15);
+    width: 100%;
+    box-shadow: 
+        inset 0px 11px 8px -10px #CCC,
+        inset 0px -11px 8px -10px #CCC; 
+}
