@@ -60,7 +60,7 @@ $(document).ready(function () {
         var course = document.getElementById('CourseDropdown').value;
         $.ajax({
             type: "GET",
-            url: "http://api.lmiforall.org.uk/api/v1/hesa/occupations?courses=" + course,
+            url: "https://api.lmiforall.org.uk/api/v1/hesa/occupations?courses=" + course,
             dataType: "json",
             success: function (data) {
                 console.log(data)
