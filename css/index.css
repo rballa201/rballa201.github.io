@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css?family=Play');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+/* -- Banner Image -- */
+.hero-image {
+  height: 450px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../img/green-keyboard2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+.hero-text {
+  font-size: 120%;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+
+/* -- Page Content -- */
+#text {
+  margin-top: -20px;
+  padding-bottom: 30px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.content {
+  padding: 20px;
+}
+
+
+.content h3 {
+  font-size: 180%;
+  text-decoration: underline;
+}
+
+.content p {
+  font-size: 100%;
+}
+
+.content .overview {
+  text-align: center;
+}
+
+.content .overview h1 {
+  font-size: 400%;
+  font-weight: bold;
+}
+
+.content .overview p {
+  padding-top: 20px;
+  font-size: 120%;
+}
+
+
+/* -- Ryans Map --*/
+#map {
+  height: 70%;
+  width: 70%;
+  position: inherit
+}
+
