@@ -8,10 +8,23 @@ $(document).ready(function () {
         var stateData = JSON.parse(localStorage.getItem('StateData'));
     }
     if (myData.name == "United States of America") {
-        var state = $("<p />", {
-            text: "State Name: " + stateData.results[0].components.state
-        });
+        var stateHeading = $("<h2 />", {
+            text: "State"
+            });
+            
+            var state = $("<p />", {
+                text: "State Name: " + stateData.results[0].components.state
+            });
+    
+            var stateTime = $("<p />", {
+            text: "Local Timezone: " + stateData.results[0].annotations.timezone.short_name
+            });
     }
+
+    var CountryHeading = $("<h2 />", {
+        text: "Country"
+        });
+
     var country = $("<p />", {
         text: "Country Name: " + myData.name
     });
@@ -28,9 +41,9 @@ $(document).ready(function () {
         text: "Subregion: " + myData.subregion
     });
     if (!(myData.name == "United States of America")) {
-        $("#Info").append(country, capital, continent, subregion, demonym);
+        $("#Info").append(CountryHeading,country, capital, continent, subregion, demonym);
     } else {
-        $("#Info").append(state, country, capital, continent, subregion, demonym);
+        $("#Info").append(stateHeading,state, stateTime,CountryHeading,country, capital, continent, subregion, demonym);
 
     }
     var currenciesLength = myData.currencies.length;
