@@ -1,4 +1,3 @@
-		//var container = $('.bootstrap-iso form').length > 0 ? $('.bootstrap-iso form').parent() : "body";
 		var options = {
 			container: ".DatePicker",
 			autoclose: true,
@@ -6,14 +5,10 @@
 			format: 'yyyy-mm',
 			startDate: '2016-04',
 			endDate: "0d",
-			// orientation: "auto",
 			clearBtn: true,
 			pickerPosition: "bottom-left"
 		};
 		$('.date-own').datepicker(options);
-		// $('.date-own').datepicker(options).on('changeDate', function (ev) {
-		// 	$(this).datepicker('hide');
-		// 	});;
 		$(document).ready(function () {
 			document.getElementById('LocationText').value = "";
 			$("#ChartDisplay").click(function () {
@@ -35,11 +30,10 @@
 				$("#chart-container").html("");
 				$("#myChart").remove(); // removing previous canvas element
 				$("#chart-container").append('<canvas id="myChart" class="myChart" width="500" height="500"></canvas>');
-				//width="500" height="500"
 				var location = document.getElementById('LocationText').value;
-				var longitude; //= document.getElementById('Longitude').value;
-				var latitude; //= document.getElementById('Latitude').value;
-				var date = $('#date').val(); //+ "-01";
+				var longitude;
+				var latitude; 
+				var date = $('#date').val();
 				var arrayLength = 0;
 				$.ajax({
 					type: "GET",
@@ -70,12 +64,9 @@
 								url: url,
 								dataType: "json",
 								success: function (data) {
-									console.log(data)
 
 									arrayLength = data.length;
-									console.log(arrayLength);
 
-									//console.log(arrayLength);
 
 									for (var i = 0; i < arrayLength; i++) {
 										if (data[i].category ==
@@ -139,9 +130,6 @@
 										}
 									}
 								},
-								/* 							error: function (jqXHR, status, errorThrown) {
-																alert("Location not in United Kingdom");
-															}, */
 								complete: function (data) {
 									if (!(arrayLength == 0)) {
 										var ctx = document.getElementById('myChart').getContext("2d");
@@ -270,8 +258,6 @@
 												var activePoints = myChart.getElementsAtEvent(evt);
 												var firstPoint = activePoints[0];
 												var label = myChart.data.labels[firstPoint._index];
-												//var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
-												//alert(label + ": " + value);
 												window.open("https://www.met.police.uk/sd/stats-and-data/met/crime-type-definitions/", '_blank');
 							
 											};
@@ -281,8 +267,6 @@
 												var activePoints = myChart.getElementsAtEvent(evt);
 												var firstPoint = activePoints[0];
 												var label = myChart.data.labels[firstPoint._index];
-												//var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
-												//alert(label + ": " + value);
 												window.open("https://www.met.police.uk/sd/stats-and-data/met/crime-type-definitions/", '_blank');
 							
 											};
@@ -313,8 +297,6 @@
 								var activePoints = myChart.getElementsAtEvent(evt);
 								var firstPoint = activePoints[0];
 								var label = myChart.data.labels[firstPoint._index];
-								//var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
-								//alert(label + ": " + value);
 								window.open("https://www.met.police.uk/sd/stats-and-data/met/crime-type-definitions/", '_blank');
 			
 							};
@@ -325,8 +307,6 @@
 								var activePoints = myChart.getElementsAtEvent(evt);
 								var firstPoint = activePoints[0];
 								var label = myChart.data.labels[firstPoint._index];
-								//var value = myChart.data.datasets[firstPoint._datasetIndex].data[firstPoint._index];
-								//alert(label + ": " + value);
 								window.open("https://www.met.police.uk/sd/stats-and-data/met/crime-type-definitions/", '_blank');
 			
 							};

@@ -1,8 +1,6 @@
     $(document).ready(function () {
         google.charts.load('current', {
             'packages': ['corechart'],
-            // Note: you will need to get a mapsApiKey for your project.
-            // See: https://developers.google.com/chart/interactive/docs/basic_load_libs#load-settings
             'mapsApiKey': 'AIzaSyAYmsRSnEUBTBaLIEfT64IZ1Gtnny-5wcs'
         });
 
@@ -22,20 +20,13 @@
             url: "https://restcountries.eu/rest/v2/all",
             dataType: "json",
             success: function (data) {
-                console.log(data);
                 var arrayLength = data.length;
-                console.log(arrayLength);
 
                 for (var i = 0; i < arrayLength; i++) {
 
                     CountryName[i] = data[i].name;
                     CountryCode[i] = data[i].alpha2Code;
                     CountryPopulation[i] = data[i].population;
-
-
-                    /* 	var Information = $("<div />");
-                        Information.append(CountryName).append(CountryPopulation);
-                        $("#chart").append(Information); */
                 }
             }
         });
@@ -60,20 +51,7 @@
                 tooltip: {
                     trigger: 'hover'
                 },
-                tooltip: {
-                    //isHtml: true
-                },
-                /* chartArea: {
-                    left: "25%",
-                    top: "3%",
-                    height: "80%",
-                    width: "100%"
-                }, */
-                //backgroundColor: 'transparent',
                 keepAspectRatio: false,
-                //width: 900,
-                //height: 900
-
             };
 
 
@@ -90,9 +68,6 @@
                         dataType: "json",
                         async: false,
                         success: function (data) {
-                            console.log(data);
-                            //localStorage.removeItem( 'CountryData' );
-                            //alert("Country Name: " + data.name);
                             var modal = document.getElementById('myModal');
                             $("#Info").html("");
 
@@ -100,7 +75,6 @@
                             var country = data.name;
                             $('#MHeader').text(country);
                             
-                            //header.html(country);
                             var population = $("<p />", {
                                 text: "Population: " + data.population.toLocaleString("en")
                             });
@@ -117,15 +91,7 @@
                             var subregion = $("<p />", {
                                 text: "Subregion: " + data.subregion
                             });
-                            // var timezones = $("<p />", {
-                            // 	text: ": " + data.
-                            // });
-                            // var borders = $("<p />", {
-                            // 	text: ": " + data.
-                            // });
-                            // var regionBloc = $("<p />", {
-                            // 	text: "Capital: " + data.
-                            // });
+                       
 
                             $("#Info").append(population,capital, continent, subregion, demonym);
                             var currenciesLength = data.currencies.length;
@@ -202,10 +168,6 @@
             });
 
             chart.draw(data, options);
-            /* 				$(window).resize(function () {
-                            var view = new google.visualization.DataView(data);
-                            chart.draw(view, options);
-                        }); */
         }
 
     });

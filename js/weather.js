@@ -271,7 +271,6 @@ $(document).ready(function () {
 
             var location = document.getElementById('LocationText').value;
 
-            console.log(location);
 
             $.ajax({
 

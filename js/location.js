@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $('#GoBack').click(function () {
-        //localStorage.removeItem( 'CountryData' );
         //location.replace("earthquake.html");
         window.close();
     });
@@ -8,10 +7,6 @@ $(document).ready(function () {
     if (myData.name == "United States of America") {
         var stateData = JSON.parse(localStorage.getItem('StateData'));
     }
-    console.log(stateData);
-
-    //window.localStorage.clear();
-    console.log(myData);
     if (myData.name == "United States of America") {
         var state = $("<p />", {
             text: "State Name: " + stateData.results[0].components.state
@@ -32,15 +27,6 @@ $(document).ready(function () {
     var subregion = $("<p />", {
         text: "Subregion: " + myData.subregion
     });
-    // var timezones = $("<p />", {
-    // 	text: ": " + myData.
-    // });
-    // var borders = $("<p />", {
-    // 	text: ": " + myData.
-    // });
-    // var regionBloc = $("<p />", {
-    // 	text: "Capital: " + myData.
-    // });
     if (!(myData.name == "United States of America")) {
         $("#Info").append(country, capital, continent, subregion, demonym);
     } else {
@@ -48,7 +34,6 @@ $(document).ready(function () {
 
     }
     var currenciesLength = myData.currencies.length;
-    console.log(currenciesLength);
     for (var i = 0; i < currenciesLength; i++) {
         if (myData.currencies[i].symbol == null) {
             var currencies = $("<p />", {
@@ -67,7 +52,6 @@ $(document).ready(function () {
 
 
     var languagesLength = myData.languages.length;
-    console.log(languagesLength);
     for (var i = 0; i < languagesLength; i++) {
         var languages = $("<p />", {
             text: "Language: " + myData.languages[i].name
@@ -76,7 +60,6 @@ $(document).ready(function () {
     }
 
     var timesLength = myData.timezones.length;
-    console.log(timesLength);
     var time = $("<p />", {
         text: "Timezones:"
     });
@@ -88,7 +71,6 @@ $(document).ready(function () {
     $("#Info").append(time);
 
     var bordersLength = myData.borders.length;
-    console.log(bordersLength);
     var border = $("<p />", {
         text: "Borders:"
     });
@@ -100,7 +82,6 @@ $(document).ready(function () {
             dataType: "json",
             async: false,
             success: function (data) {
-                console.log(data);
                 var borders = $("<li />", {});
                 borders.append(data.name);
                 border.append(borders);
@@ -110,7 +91,6 @@ $(document).ready(function () {
     $("#Info").append(border);
 
     var regionBlocLength = myData.regionalBlocs.length;
-    console.log(regionBlocLength);
     for (var i = 0; i < regionBlocLength; i++) {
         var regionalBlocs = $("<p />", {
             text: "Region Bloc(Unions etc): " + myData.regionalBlocs[i].name
