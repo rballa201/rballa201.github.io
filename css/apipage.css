@@ -43,28 +43,7 @@
     height: auto;
 }
 
-
-
-/*LIFE EXPECTANCY PAGE*/
-
-/* .ui-datepicker-calendar {
-    display: none;
- }
- .ui-datepicker-month {
-    display: none;
- }
- .ui-datepicker-prev{
-    display: none;
- }
- .ui-datepicker-next{
-    display: none;
- } */
-
-
-
-
 /*WEATHER PAGE*/
-
 
 .weathertextboxes {
     background-color:white;
@@ -125,7 +104,7 @@
   }
   
   .selectedtrigger input[type="text"] {
-      width: 120px;
+      width: 130px;
   }
   
   text {
