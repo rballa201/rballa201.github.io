@@ -1,21 +1,28 @@
 $(document).ready(function () {
+
+    //Chart Variables
     var myChart;
     var OccupationSOC = [];
     var OccupationTitle = [];
     var OccupationPercentage = [];
+
+    //Clear Previous Charts
     $("#myChart").remove(); // removing previous canvas element
     $("#chart-container").append('<canvas id="myChart" class="myChart"></canvas>');
+    
+    //API Call - Get Course Data and Populate dropdown/combobox
     $.ajax({
         type: "GET",
         url: "https://api.lmiforall.org.uk/api/v1/hesa/list-courses",
         dataType: "json",
         success: function (data) {
 
+            //Course Variables
             var CourseID = [];
             var CourseName = [];
 
             var arrayLength = data.length;
-
+            //Store Course Id's and their names
             for (var i = 0; i < arrayLength; i++) {
                 CourseID[i] = data[i].id;
                 CourseName[i] = data[i].name;
@@ -35,12 +42,21 @@ $(document).ready(function () {
         }
     });
 
+    //Dropdown menu change function
     $("#CourseDropdown").change(function () {
+
+        //Clear Default Option in dropdown
         $("#CourseDropdown option[value='select']").remove();
+
+        //Clear Previous Charts
         $("#chart-container").html("");
         $("#myChart").remove(); // removing previous canvas element
         $("#chart-container").append('<canvas id="myChart" class="myChart" width="500" height="500"></canvas>');
+
+        //Obtain value of dropdown menu
         var course = document.getElementById('CourseDropdown').value;
+
+        //API Call - Obtain Course and Job Information
         $.ajax({
             type: "GET",
             url: "https://api.lmiforall.org.uk/api/v1/hesa/occupations?courses=" + course,
@@ -48,10 +64,13 @@ $(document).ready(function () {
             success: function (data) {
 
                 var arrayLength = data.length;
+                //If Data empty then display no data message
                 if (arrayLength == 0) {
                     alert("No Data avialable");
                     $("#chart-container").html("No Data avialable");
-                } else {
+                }
+                //If not empty Create and Store Course Data
+                else {
                     var lastArray = arrayLength - 1;
                     var CourseArrayLength = data[lastArray].occupations.length;
                     if (CourseArrayLength <= 10) {
@@ -69,12 +88,15 @@ $(document).ready(function () {
 
             },
             error: function (xhr, status) {
+                //If error then display error message
                 $("#chart-container").html("No Data avialable");
             },
+            //Create and Display Chart
             complete: function (data) {
                 var ctx = document.getElementById('myChart');
                 myChart = new Chart(ctx, {
                     type: 'doughnut',
+                    //Chart Data
                     data: {
                         labels: OccupationTitle,
                         datasets: [{
@@ -83,6 +105,7 @@ $(document).ready(function () {
                             backgroundColor: ["#33ccff", "#0099cc", "#006080", "#00394d", " #4d0026", "#800040", "#b30059", " #e60073", "#ff1a8c", "#ff99cc"],
                         }]
                     },
+                    //Chart Options
                     options: {
                         responsive: true,
                         maintainAspectRatio: false,
@@ -91,6 +114,8 @@ $(document).ready(function () {
                         }
                     }
                 });
+
+                //Change Click event trigger depending on Page size
                 var windowWidth = $(window).width();
                 if (windowWidth > 500) {
                     document.getElementById("myChart").onclick = function (evt) {
@@ -110,6 +135,7 @@ $(document).ready(function () {
 
                     };
                 }
+                //Change Legend Location based on page size
                 if (windowWidth < 1000) {
                     myChart.options.legend.position = 'top';
                     myChart.update();
@@ -122,6 +148,7 @@ $(document).ready(function () {
         });
     });
 
+    //Check and if needed Change Click Trigger and Legend Location depending on Page size when resizing page 
     $(window).on('resize', function (event) {
         try {
             var windowWidth = $(window).width();
